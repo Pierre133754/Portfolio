@@ -1,4 +1,5 @@
 import "./Projet.scss"
+import Spin from "./Spin";
 
 function Projet(props) {
     var ppos1 = 0, ppos2 = 0, ppos3 = 0, ppos4 = 0;
@@ -11,18 +12,27 @@ function Projet(props) {
     let openModal = () => (
         currentX = projet.style.left,
         currentY = projet.style.top,
-        projet.style.left = "calc(50% - 253px)",
-        projet.style.top = "calc(50% - 253px)",
+        document.querySelector("."+props.name+" .meatImg").style.display = "none",
+        document.querySelector("."+props.name+" .spin").style.display = "block",
+        projet.style.left = "calc(50% - 500px)",
+        projet.style.top = "calc(50% - 400px)",
         projet.style.position = "fixed",
         projet.style.zIndex = "99999",
+        projet.style.width = "1000px",
+        projet.style.maxHeight = "800px",
         document.querySelector(".modal"+props.name).style.display = "block",
         MAstate = 1
     )
     let closeModal = () => (
+        document.querySelector("."+props.name+" .meatImg").style.display = "block",
+        document.querySelector("."+props.name+" .spin").style.display = "none",
         projet.style.left = currentX,
         projet.style.top = currentY,
         projet.style.position = "absolute",
         projet.style.zIndex = localStorage.getItem("z"),
+        localStorage.setItem("z",+localStorage.getItem("z")+1),
+        projet.style.width = "500px",
+        projet.style.maxHeight = "500px",
         document.querySelector(".modal"+props.name).style.display = "none",
         MAstate = 0
     )
@@ -134,12 +144,14 @@ function Projet(props) {
                 </div>
                 <div className="projetBody">
                     <div className="meat">
-                        <img className="meatImg" src={props.img} alt="Photo du projet"></img>
+                        <Spin imgs={props.img}></Spin>
+                        <img src={props.img[0]} className="meatImg" alt="Photo du projet"></img>
                         <p className="meatDesc">{props.desc}</p>
                         <div className="meatCards">
                             <div className="meatCardsTechs">
-                                <div><p>{props.techs[0]}</p></div>
-                                <div><p>{props.techs[1]}</p></div>
+                                {props.techs.map((tech) => (
+                                    <div key={tech}><p>{tech}</p></div>
+                                ))}
                             </div>
                             <div className="meatCardsLink"><a href={props.link} target="_blank">Lien vers le projet</a></div>
                         </div>

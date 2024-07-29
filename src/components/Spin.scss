@@ -1,0 +1,46 @@
+.spin {
+    position: relative;
+    img {
+        height: 588px;
+        object-fit: contain;
+        width: calc(100% - 6px);
+        border: inset;
+    }
+    &Case{
+        height: 86px;
+        width: 86px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: outset 2px;
+        &Counter {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 2%;
+            left: 49%;
+            margin: 0;
+            color: black;
+            font-family: Tahoma;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: right;
+            height: 30px;
+            width: 40px;
+            background: #c0c0c0;
+            border: inset 2px;
+        }
+    }
+    .Left {
+        top: 45%;
+        left: 3%;
+        background-image: url("../assets/leftArrow.png");
+    }
+    .Right {
+        top: 45%;
+        right: 3%;
+        background-image: url("../assets/rightArrow.png");
+    }
+}
