@@ -1,0 +1,24 @@
+.bod {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 425px;
+    &Try {
+        position: relative;
+        margin-left: 100px;
+        &Img {
+            position: absolute;
+            z-index: 8;
+            width: 200px;
+            cursor: move;
+        }
+    }
+    &Projets {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 50px;
+        column-gap: 100px;
+    }
+}

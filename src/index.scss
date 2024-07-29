@@ -1,0 +1,53 @@
+body{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+#root {
+  max-width: 1440px;
+  width: 100%;
+}
+
+canvas {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+*:not(#me) {
+  cursor: url(./assets/Sprite-0004.png), auto;
+  animation: cursor 9000ms infinite;
+  -webkit-animation: cursor 9000ms infinite;
+}
+
+@keyframes cursor {
+  0% {cursor: url(./assets/Sprite-0004.png), auto;}
+  21% {cursor: url(./assets/Sprite-0004.png), auto;}
+  23% {cursor: url(./assets/Sprite-0014.png), auto;}
+  25% {cursor: url(./assets/Sprite-0013.png), auto;}
+  27% {cursor: url(./assets/Sprite-0012.png), auto;}
+  29% {cursor: url(./assets/Sprite-0011.png), auto;}
+  71% {cursor: url(./assets/Sprite-0011.png), auto;}
+  73% {cursor: url(./assets/Sprite-0012.png), auto;}
+  75% {cursor: url(./assets/Sprite-0013.png), auto;}
+  77% {cursor: url(./assets/Sprite-0014.png), auto;}
+  79% {cursor: url(./assets/Sprite-0004.png), auto;}
+  100% {cursor: url(./assets/Sprite-0004.png), auto;}
+}
+
+@-webkit-keyframes cursor {
+  0% {cursor: url(./assets/Sprite-0004.png), auto;}
+  42% {cursor: url(./assets/Sprite-0004.png), auto;}
+  44% {cursor: url(./assets/Sprite-0014.png), auto;}
+  46% {cursor: url(./assets/Sprite-0013.png), auto;}
+  48% {cursor: url(./assets/Sprite-0012.png), auto;}
+  50% {cursor: url(./assets/Sprite-0011.png), auto;}
+  70% {cursor: url(./assets/Sprite-0011.png), auto;}
+  72% {cursor: url(./assets/Sprite-0012.png), auto;}
+  74% {cursor: url(./assets/Sprite-0013.png), auto;}
+  76% {cursor: url(./assets/Sprite-0014.png), auto;}
+  78% {cursor: url(./assets/Sprite-0004.png), auto;}
+  100% {cursor: url(./assets/Sprite-0004.png), auto;}
+}
