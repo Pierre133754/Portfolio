@@ -192,3 +192,9 @@
         }
     }
 }
+
+@media (any-pointer: coarse) {
+    .projetBarControls {
+        display: none;
+    }
+}

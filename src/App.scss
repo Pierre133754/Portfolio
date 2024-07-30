@@ -117,3 +117,9 @@ header {
     font-size: 20px;
   }
 }
+
+@media (any-pointer: coarse) {
+  .slider {
+    display: none;
+  }
+}
