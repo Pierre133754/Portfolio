@@ -22,3 +22,35 @@
         column-gap: 100px;
     }
 }
+
+.mediaReplace {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .slider {
+      display: none;
+    }
+  
+    .mediaReplace {
+      display: block;
+      width: 200px;
+    }
+  
+    .bodTryImg {
+      display: none;
+    }
+  
+    .bod {
+      gap: 125px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bod {
+        margin: 100px 0;
+        &Try {
+            margin-left: 50px;
+        }
+    }
+}

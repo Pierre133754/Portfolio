@@ -27,6 +27,7 @@ function Bod() {
         <> 
             <section id="bod" className="bod">
                 <div className="bodTry">
+                    <img src={me} alt="me" className="mediaReplace"></img>
                     <img src={me} alt="me" id="me" className="bodTryImg" 
                     onMouseDown={(e) => (
                             e.preventDefault(),

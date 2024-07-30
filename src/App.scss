@@ -9,6 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 50px 100px;
+  gap: 50px;
   & h1 {
       background-color: black;
       color: white;
@@ -94,5 +95,25 @@ header {
           height: 20px;
           background: white;
         }
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin: 50px 20px;
+    flex-direction: column;
+    & h1{
+      font-size: 24px;
+    }
+  }
+
+  .gitLink a {
+    font-size: 20px;
   }
 }
