@@ -15,11 +15,11 @@ function Projet(props) {
         document.querySelector("."+props.name+" .meatImg").style.display = "none",
         document.querySelector("."+props.name+" .spin").style.display = "block",
         projet.style.left = "calc(50% - 500px)",
-        projet.style.top = "20%",
-        projet.style.position = "absolute",
+        projet.style.top = "calc(50% - 39vh)",
+        projet.style.position = "fixed",
         projet.style.zIndex = "99999",
         projet.style.width = "1000px",
-        projet.style.maxHeight = "800px",
+        projet.style.maxHeight = "100vh",
         document.querySelector(".modal"+props.name).style.display = "block",
         MAstate = 1
     )
