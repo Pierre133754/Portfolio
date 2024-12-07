@@ -4,7 +4,6 @@ import GHlink from './components/GHlink'
 import Projets from './components/Projets'
 import ProjetsContent from './components/ProjetsContent'
 import Balls from './components/Balls'
-import Test from './components/Test'
 
 function App() {
   const [projet, setProjet] = useState({
@@ -83,9 +82,6 @@ function App() {
           <div className='CPTcanvas'>
             <Balls />
           </div>
-        </section>
-        <section id='test' className='hidden'>
-          <Test />
         </section>
       </main>
       <footer>
