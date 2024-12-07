@@ -1,0 +1,369 @@
+body {
+    background-color: #F5F5F5;
+}
+
+:target {
+    scroll-margin-top: 75px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-25%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    nav {
+        a {
+            display: inline-block;
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            transition: all 0.5s;
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+        .navMenu {
+            display: none;
+            .dropOff {
+                display: none;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+#presentation {
+    position: relative;
+    .me {
+        position: absolute;
+        z-index: 1;
+        top: 100px;
+        left: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        h1 {
+            font-size: 35px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+    .presentationCanvas {
+        width: 80vw;
+        height: 500px;
+    }
+}
+
+#projetsOC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background-color: #F0F0F0;
+    border-radius: 14px;
+    padding: 2vw;
+    .POCintro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .indication {
+            font-size: 13px;
+        }
+    }
+    .POCprojets {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 90vw;
+        &Canvas {
+            width: min(50vw, 900px);
+            height: min(calc(50vw/1.555 + 10vw), 758.77px);
+        }
+        &Content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            max-width: 35vw;
+        }
+    }
+}
+
+#compétences {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    .CPTintro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .indication {
+            font-size: 13px;
+        }
+    }
+    .CPTcanvas {
+        width: min(80vw, 1000px);
+        height: min(40vw, 500px);
+    }
+}
+
+#test {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    .input {
+        padding: 10px;
+        &Form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            #user {
+                text-align: center;
+            }
+            #comment {
+                text-align: center;
+            }
+        }
+    }
+    .comments {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        &Whole {
+            max-width: 90vw;
+            word-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 10px;
+            &User {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #projetsOC {
+        gap: 0;
+        .POCprojets {
+            flex-direction: column-reverse;
+            &Canvas {
+                width: 80vw;
+                height: calc(80vw/1.555 + 10vw);
+            }
+            &Content {
+                max-width: 80vw;
+            }
+        }
+        .POCintro {
+            p {
+                max-width: 80vw;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        nav {
+            a {
+                display: none;
+            }
+            .navMenu {
+                display: inline-block;
+                .bar1, .bar2, .bar3 {
+                    width: 35px;
+                    height: 5px;
+                    background-color: black;
+                    margin: 6px 0;
+                    transition: 0.4s;
+                }
+                .change.bar1 {
+                    transform: translate(0 ,11px) rotate(-45deg);
+                }
+                .change.bar2 {
+                    opacity: 0;
+                }
+                .change.bar3 {
+                    transform: translate(0, -11px) rotate(45deg);
+                }
+                .dropOn {
+                    border-top: 5px solid #F5F5F5;
+                    position: fixed;
+                    top: 50px;
+                    left: 0px;
+                    width: 100%;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    animation: growDown 200ms ease-in-out forwards;
+                    transform-origin: top center;
+                    a {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes growDown {
+        0% {
+            transform: scaleY(0)
+        }
+        100% {
+            transform: scaleY(1)
+        }
+    }
+
+    main {
+        margin-top: 50px;
+        gap: 75px;
+    }
+
+    #presentation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        .me {
+            position: relative;
+            text-align: center;
+            top: 0;
+            left: 0;
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+        .presentationCanvas {
+            height: min(80vw, 350px);
+        }
+    }
+
+    #projetsOC {
+        text-align: center;
+        gap: 20px;
+        .POCintro {
+            h2 {
+                font-size: 25px;
+            }
+            p {
+                font-size: 15px;
+            }
+            .indication {
+                font-size: 12px;
+                margin-top: 5px;
+            }
+        }
+        .POCprojets {
+            width: 94vw;
+            &Canvas {
+                width: 94vw;
+                height: calc(94vw/1.555 + 10vw);
+            }
+            &Content {
+                h2 {
+                    font-size: 22px;
+                }
+                p {
+                    font-size: 15px;
+                }
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    #compétences {
+        gap: 25px;
+        text-align: center;
+        .CPTintro {
+            max-width: 90vw;
+            h2 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 15px;
+            }
+            .indication {
+                font-size: 12px;
+            }
+        }
+        .CPTcanvas {
+            width: 94vw;
+            height: 47vw;
+        }
+    }
+}
